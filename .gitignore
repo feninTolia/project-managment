@@ -5,5 +5,5 @@ client/.env.local
 client/.next/
 
 server/node_modules
-server/dist
+server/dist/
 server/.env
