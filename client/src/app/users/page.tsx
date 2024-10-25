@@ -32,7 +32,7 @@ const columns: GridColDef<User>[] = [
       <div className="flex w-full h-full items-center justify-center">
         <div className="h-9 w-9">
           <Image
-            src={`/${params.value}`}
+            src={`https://ftoe-pm-s3-images.s3.eu-central-1.amazonaws.com/${params.value}`}
             alt={params.row.username}
             width={100}
             height={50}

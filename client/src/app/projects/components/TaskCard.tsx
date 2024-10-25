@@ -67,7 +67,7 @@ const TaskCard = ({ task }: Props) => {
           <div className="flex flex-wrap">
             {isAttachmentShow && (
               <Image
-                src={`/${task.attachments[0].fileURL}`}
+                src={`https://ftoe-pm-s3-images.s3.eu-central-1.amazonaws.com/${task.attachments[0].fileURL}`}
                 alt={task.attachments[0].fileName}
                 width={400}
                 height={200}
