@@ -4,7 +4,7 @@ import TaskCard from '@/app/projects/components/TaskCard';
 import { useAppSelector } from '@/app/redux';
 import Header from '@/components/Header/Header';
 import { dataGridClassNames, dataGridSxStyles } from '@/lib/utils';
-import { useGetTasksByUserQuery } from '@/state/api';
+import { useGetAuthUserQuery, useGetTasksByUserQuery } from '@/state/api';
 import { Priority } from '@/state/types';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useState } from 'react';
@@ -45,8 +45,9 @@ type Props = { priority: Priority };
 const ReusablePriorityPage = ({ priority }: Props) => {
   const [view, setView] = useState('list');
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
+  const { data: currentUser } = useGetAuthUserQuery({});
 
-  const userId = 1;
+  const userId = currentUser?.userDetails.userId ?? null;
   const {
     data: tasks,
     isError,
