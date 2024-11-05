@@ -21,7 +21,11 @@ const Navbar = () => {
       console.log('Error signing out:', error);
     }
   };
+
+  console.log(currentUser, 'currentUser');
+
   const currentUserDetails = currentUser?.userDetails;
+  console.log(currentUserDetails, 'currentUserDetails');
 
   if (!currentUser) return null;
 
@@ -90,7 +94,7 @@ const Navbar = () => {
             )}
           </div>
           <span className="mx-3 text-gray-800 dark:text-white">
-            {currentUserDetails?.username}
+            {currentUserDetails?.username ?? currentUser.user.username}
           </span>
           <button
             className="hidden rounded bg-blue-400 px-4 py-2 text-xs font-bold text-white hover:bg-blue-500 md:block"
